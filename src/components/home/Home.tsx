@@ -9,10 +9,12 @@ import NavBar from "../navBar/NavBar";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
+import "Home.css";
 
 function Home() {
   return (
-    <div style={{ background: `url(${bg}) repeat-y`, color: `white` }}>
+    // <div style={{ background: `url(${bg}) repeat-y`, color: `white` }}>
+    <div>
       {/* Hero */}
       <main
         // style={{ height: '31rem', backgroundImage: `url(${banner2})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>

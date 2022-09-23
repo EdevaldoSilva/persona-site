@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreateAccountStep2 = () => {
+const CreateAccountQuest3 = () => {
     return (
         <div className='card mx-auto w-3/5 h-screen'>
             <div className='card-body mt-20'>
@@ -42,4 +42,4 @@ const CreateAccountStep2 = () => {
     )
 }
 
-export default CreateAccountStep2
+export default CreateAccountQuest3
