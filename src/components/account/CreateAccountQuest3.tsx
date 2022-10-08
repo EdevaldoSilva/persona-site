@@ -1,45 +1,59 @@
-import React from 'react'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Center,
+  Flex,
+  Heading,
+  Radio,
+  RadioGroup,
+  Spacer,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SharedAccount.css";
 
 const CreateAccountQuest3 = () => {
-    return (
-        <div className='card mx-auto w-3/5 h-screen'>
-            <div className='card-body mt-20'>
-                <div className='mb-16'>
-                    <h2 className='card-title'>Qual é o seu objetivo dentro do mercado liberal?</h2>
-                    <p>Queremos destacar as oportunidades que melhor se adequam aos seus objetivos e mostrar todas as possibilidades.</p>
-                </div>
-                <div>
-                    <div className='form-control mt-1'>
-                        <label className="flex justify-start">
-                            <input type="radio" name="radio" className='radio' />
-                            <span className="ml-2 label-text">Criar a minha principal fonte de rendimento.</span>
-                        </label>
-                    </div>
-                    <div className='form-control mt-1'>
-                        <label className="flex justify-start">
-                            <input type="radio" name="radio" className='radio' />
-                            <span className="ml-2 label-text">Criar uma fonte de rendimento extra.</span>
-                        </label>
-                    </div>
-                    <div className='form-control mt-1'>
-                        <label className="flex justifys-start">
-                            <input type="radio" name="radio" className='radio' />
-                            <span className="ml-2 label-text">Adquirir experiência profissional.</span>
-                        </label>
-                    </div>
-                    <div className='form-control mt-1'>
-                        <label className="flex justifys-start">
-                            <input type="radio" name="radio" className='radio' />
-                            <span className="ml-2 label-text">Ainda não tenho nenhum objetivo, estou a explorar.</span>
-                        </label>
-                    </div>
-                </div>
-                <div className='card-actions justify-end'>
-                    <button className='btn'>Seguinte</button>
-                </div>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className='main'>
+      <div className="w-2/3 h-2/3 p-12 bg-white shadow-sm rounded-sm">
+        <Stack marginBottom={6}>
+          <Heading as="h1" size="lg">
+            Qual é o seu objetivo dentro do mercado liberal?
+          </Heading>
+          <Text fontSize="md">
+            Queremos destacar as oportunidades que melhor se adequam aos seus
+            objetivos e mostrar todas as possibilidades.
+          </Text>
+        </Stack>
+        <Stack marginBottom={4} spacing={2}>
+          <RadioGroup defaultValue="1">
+            <Stack spacing={2}>
+              <Radio value="1">
+                Criar a minha principal fonte de rendimento.
+              </Radio>
+              <Radio value="2">Criar uma fonte de rendimento extra.</Radio>
+              <Radio value="3">Adquirir experiência profissional.</Radio>
+              <Radio value="4">
+                Ainda não tenho nenhum objetivo, estou a explorar.
+              </Radio>
+            </Stack>
+          </RadioGroup>
+        </Stack>
+        <Flex>
+          <Link to="/criar-conta-quest2">
+            <Button colorScheme="gray">Anterior</Button>
+          </Link>
+          <Spacer />
+          <Link to="/criar-conta-quest4">
+            <Button colorScheme="blue">Seguinte</Button>
+          </Link>
+        </Flex>
+      </div>
+    </div>
+  );
+};
 
-export default CreateAccountQuest3
+export default CreateAccountQuest3;

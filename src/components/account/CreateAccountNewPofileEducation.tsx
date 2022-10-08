@@ -1,32 +1,95 @@
-import React from 'react'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Center,
+  Flex,
+  Heading,
+  Radio,
+  RadioGroup,
+  Spacer,
+  Stack,
+  Select,
+  Text,
+  VStack,
+  FormControl,
+  FormLabel,
+  Input,
+  Textarea,
+  HStack,
+} from "@chakra-ui/react";
+import React from "react";
 import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./SharedAccount.css";
 
 const CreateAccountNewProfileEducation = () => {
-    return (
-        <div className='items-center h-screen w-4/5 mx-auto pt-10'>
-            <div className='mb-2'>
-                <input type="email" placeholder="Título" className="input input-bordered w-full" />
-            </div>
-            <div className="flex justify-start gap-3 mb-2">
-                <input type="text" placeholder="Grau" className="input input-bordered w-full" />
-            </div>
-            <div className="flex justify-start gap-3 mb-2">
-                <input type="text" placeholder="Campo de Estudo" className="input input-bordered w-full" />
-                <input type="text" placeholder="Região/País" className="input input-bordered w-full" />
-            </div>
-            <div className="flex justify-start gap-3 mb-2">
-                <input type="text" placeholder="Data Inicio" className="input input-bordered w-full" />
-                <input type="text" placeholder="Data Fim" className="input input-bordered w-full" />
-            </div>
-            <div className="form-control mb-2">
-                <label className="label">
-                    <span className="label-text">Descrição</span>
-                </label>
-                <textarea className="textarea textarea-bordered h-44" placeholder="Bio"></textarea>
-            </div>
-            <button className="btn btn-outline">Criar Conta</button>
-        </div>
-    )
-}
+  return (
+    <div className='main'>
+      <div className="w-4/5 h-fit px-8 py-4 bg-white shadow-sm rounded-sm">
+        <Stack marginBottom={2}>
+          <Heading as="h1" size="md">
+            Adicione a sua educação
+          </Heading>
+          <Text fontSize="sm">
+            Os diplomas não são obrigatórios. Adicione qualquer educação
+            relevante e ajude-nos a tornar o seu perfil mais visível.
+          </Text>
+        </Stack>
+        <VStack spacing={1}>
+          <FormControl>
+            <FormLabel>Título</FormLabel>
+            <Input placeholder="Universidade Agostinho Neto" />
+          </FormControl>
 
-export default CreateAccountNewProfileEducation
+          <FormControl>
+            <FormLabel>Grau</FormLabel>
+            <Input placeholder="Licenciatura" />
+          </FormControl>
+
+          <HStack spacing={8} className="w-full">
+            <FormControl>
+              <FormLabel>Campo de Estudo</FormLabel>
+              <Input placeholder="Bussiness" />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Regiao</FormLabel>
+              <Select placeholder="Selecione a Categoria">
+                <option>Angola</option>
+                <option>Brazil</option>
+                <option>Moçambique</option>
+              </Select>
+            </FormControl>
+          </HStack>
+
+          <HStack spacing={8} className="w-full">
+            <FormControl>
+              <FormLabel>Data de Inicio</FormLabel>
+              <Input type="month" placeholder="De" />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Data de Fim</FormLabel>
+              <Input type="month" placeholder="Até" />
+            </FormControl>
+          </HStack>
+
+          <FormControl>
+            <FormLabel>Descrição</FormLabel>
+            <Textarea placeholder="Descrever os seus estudos, prémios, etc" />
+          </FormControl>
+        </VStack>
+        <Flex marginTop={4}>
+          <Link to="/criar-perfil">
+            <Button colorScheme="gray">Anterior</Button>
+          </Link>
+          <Spacer />
+          <Link to="/criar-conta-experiencia">
+            <Button colorScheme="blue">Próximo</Button>
+          </Link>
+        </Flex>
+      </div>
+    </div>
+  );
+};
+
+export default CreateAccountNewProfileEducation;

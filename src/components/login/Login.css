@@ -1,0 +1,8 @@
+.main_login {
+    @apply min-h-screen flex items-center justify-center py-12 px-4;
+    background-image: url("../../assets/bg-login1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }

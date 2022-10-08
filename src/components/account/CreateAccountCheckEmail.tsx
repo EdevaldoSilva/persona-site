@@ -1,34 +1,20 @@
-import { Box, Container, Flex, Stack, Heading, Button } from "@chakra-ui/react";
+import { Box, Heading, Button } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
+import "./SharedAccount.css";
 
 function CreateAccountCheckEmail() {
   return (
-    <Flex minH={"100vh"} align={"center"} justify={"center"} bg={"white"}>
-      <Container
-        maxW={"lg"}
-        boxShadow={"xl"}
-        rounded={"lg"}
-        p={6}
-      >
-        <Stack
-          direction={{ base: "column", md: "row" }}
-          as={"form"}
-          spacing={"12px"}
-        >
-          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Heading
-              as={"h2"}
-              fontSize={{ base: "xl", sm: "2xl" }}
-              textAlign={"center"}
-              mb={5}
-            >
-              Verifique seu email para prosseguir
-            </Heading>
-          </Box>
-        </Stack>
-        <Button colorScheme='blue'>Reenviar Email</Button>
-      </Container>
-    </Flex>
+    <div className='main'>
+      <div className="w-6/12 h-1/3 shadow-md rounded-md p-6 text-center bg-white">
+        <Box borderWidth={2} borderRadius={15} mb={3} p={2}>
+          <Heading size="lg">Verifique seu email para prosseguir</Heading>
+        </Box>
+        <Link to="/criar-conta-quest1">
+          <Button colorScheme="blue">Reenviar Email</Button>
+        </Link>
+      </div>
+    </div>
   );
 }
 

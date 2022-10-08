@@ -1,0 +1,21 @@
+.main {
+  @apply flex justify-center items-center min-h-screen;
+  background-image: url("../../assets/bg-create-profile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.main_create_account {
+  @apply flex justify-end h-screen;
+  background-image: url("../../assets/bg-create-profile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+svg {
+  display: inline-block;
+}

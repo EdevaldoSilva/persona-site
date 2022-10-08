@@ -9,8 +9,8 @@ export default function Footer() {
     return (
         <>
             {/* Entrar */}
-            <section className='mt-2 py-8 px-6' >
-                <div className='mx-auto max-w-6xl bg-white text-black justify-center flex space-x-10'>
+            <section className='mt-2 py-8 px-6 bg-white'>
+                <div className='mx-auto max-w-6xl text-black justify-center flex space-x-10'>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis nunc ac justo accumsan viverra. Nullam hendrerit maximus neque in</p>
                     <Button color='white' bgColor='gray.800' _hover={{bgColor: 'gray.600'}} size='lg'>
                         Inscreva-se
@@ -18,7 +18,7 @@ export default function Footer() {
                 </div>
             </section>
 
-            <footer className='my-4 mx-auto p-4 border-t'>
+            <footer className='my-4 mx-auto p-4 border-t bg-white'>
                 <div className='flex gap-2 justify-center'>
                     <span>Sobre Nós</span>
                     <span>Contacte-nos</span>

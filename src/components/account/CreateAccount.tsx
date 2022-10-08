@@ -1,29 +1,34 @@
 import {
   Button,
   Checkbox,
+  Heading,
   Input,
   InputGroup,
   InputRightElement,
   Select,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./SharedAccount.css";
 
 const CreateAccount = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
   return (
-    <div className="bg-white flex justify-end h-screen">
-      {/* <div className='my-20 mx-auto w-2/4 h-4/5'> */}
-      <div className="mt-10 mr-16 w-2/4 h-4/5">
+    <div className='main_create_account'>
+      <div className="mt-10 mr-36 w-2/5 h-4/5 p-4 rounded-md bg-white">
         <div className="mb-4">
-          <h1>Criar uma Conta</h1>
-          <p>
+          <Heading size="md">Bem-vindo(a) a Persona</Heading>
+          <Text fontSize="md">
             Já tem uma Persona ID?{" "}
-            <a className="text-blue-700" href="#">
+            <Link className="text-blue-500 font-bold" to="/login">
               Faça o Login
-            </a>
-          </p>
+            </Link>
+          </Text>
         </div>
         <div className="mb-2">
           <Input placeholder="Email" type="email" />
@@ -39,9 +44,9 @@ const CreateAccount = () => {
               type={show ? "text" : "password"}
               placeholder="Senha"
             />
-            <InputRightElement width="4.5rem">
+            <InputRightElement className="mr-2">
               <Button h="1.75rem" size="sm" onClick={handleClick}>
-                {show ? "Hide" : "Show"}
+                {show ? <FaEye /> : <FaEyeSlash />}
               </Button>
             </InputRightElement>
           </InputGroup>
@@ -57,18 +62,24 @@ const CreateAccount = () => {
             <option>Argélia</option>
             <option>Mali</option>
           </Select>
-          <select className="select select-bordered w-full max-w-xs"></select>
         </div>
-        <div className="form-control mb-2">
-          <Checkbox>Checkbox</Checkbox>
+        <div className="mb-2">
+          <Checkbox>Entre em contato comigo por email</Checkbox>
         </div>
         <div className="mb-2">
           <p>
-            Ao clicar em Criar conta, eu concordo que li e aceito os Termos de
-            uso e a Política de privacidade.
+            Ao clicar em Criar conta, eu concordo que li e aceito os{" "}
+            <span className="text-blue-500 font-bold">Termos de uso</span> e a{" "}
+            <span className="text-blue-500 font-bold">
+              Política de privacidade.
+            </span>
           </p>
         </div>
-        <button className="btn btn-outline">Criar Conta</button>
+        <div className="text-right">
+          <Link to="/verificar-email">
+            <Button colorScheme="blue">Criar Conta</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
