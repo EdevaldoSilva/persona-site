@@ -46,7 +46,7 @@ const CreateAccount = () => {
             />
             <InputRightElement className="mr-2">
               <Button h="1.75rem" size="sm" onClick={handleClick}>
-                {show ? <FaEye /> : <FaEyeSlash />}
+              {show ? <FaEyeSlash /> : <FaEye />}
               </Button>
             </InputRightElement>
           </InputGroup>

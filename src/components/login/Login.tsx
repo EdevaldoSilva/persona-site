@@ -5,36 +5,79 @@ import {
   Heading,
   HStack,
   Input,
+  InputGroup,
+  InputRightElement,
   Spacer,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
-import { FaFacebook, FaGoogle, FaLock } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaEye,
+  FaEyeSlash,
+  FaFacebook,
+  FaGoogle,
+  FaLock,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
+
   return (
     <div className="main_login text-white">
       <VStack className="max-w-md w-full" spacing={4}>
-        <Heading size="md" as='h1'>
+        <Heading size="md" as="h1">
           Ainda não tem uma conta?{" "}
           <Link to="/criar-conta">
-            <span className="hover:text-green-800 transition-all duration-500">Crie Aqui</span>
+            <span className="hover:text-green-800 transition-all duration-500">
+              Crie Aqui
+            </span>
           </Link>
         </Heading>
-        <Input bgColor='rgba(0, 0, 0, 0.3)' focusBorderColor="white" placeholder="Username"/>
-        <Input bgColor='rgba(0, 0, 0, 0.3)' focusBorderColor="white" placeholder="Password" />
+        <Input
+          bgColor="rgba(0, 0, 0, 0.3)"
+          focusBorderColor="white"
+          placeholder="Username"
+        />
+        <InputGroup size="md">
+          <Input
+            bgColor="rgba(0, 0, 0, 0.3)"
+            focusBorderColor="white"
+            placeholder="Password"
+            type={show ? "text" : "password"}
+          />
+          <InputRightElement className="mr-2">
+            <Button
+              bgColor="rgba(0, 0, 0, 0.3)"
+              h="1.75rem"
+              size="sm"
+              onClick={handleClick}
+              _hover={{
+                bgColor: "rgba(0, 0, 0, 0.5)",
+              }}
+            >
+              {show ? <FaEyeSlash /> : <FaEye />}
+            </Button>
+          </InputRightElement>
+        </InputGroup>
         <Button className="w-full" colorScheme="teal">
           Entrar
         </Button>
-        <Text className="font-semibold" w='100%' textAlign='right' size='xs'>Esqueceu-se da Password?</Text>
+        <Text className="font-semibold" w="100%" textAlign="right" size="xs">
+          Esqueceu-se da Password?
+        </Text>
         <Text className="font-semibold">-Ou Entre com-</Text>
         <HStack spacing={2}>
-          <Button colorScheme='orange' leftIcon={<FaGoogle/>}>Google</Button>
-          <Button colorScheme='facebook' leftIcon={<FaFacebook/>}>Facebook</Button>
+          <Button colorScheme="orange" leftIcon={<FaGoogle />}>
+            Google
+          </Button>
+          <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
+            Facebook
+          </Button>
         </HStack>
       </VStack>
       {/* <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
